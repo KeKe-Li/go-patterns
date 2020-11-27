@@ -19,14 +19,13 @@ type Printables interface {
 	PrintStr()
 }
 
-func (w WithName) Printables(){
+func (w WithName) Printables() {
 	fmt.Println(w.Name)
 }
 
-func main(){
-	c1 := Province{WithName{Name:"henan"}}
-	c2 := Name{WithName{Name:"keke"}}
-
+func main() {
+	c1 := Province{WithName{Name: "henan"}}
+	c2 := Name{WithName{Name: "keke"}}
 	c1.Printables()
 	c2.Printables()
 }

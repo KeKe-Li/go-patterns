@@ -35,8 +35,8 @@ func slice02() {
 	dir1 := path[:seqIndex:seqIndex] // limited Capacity  The appending cause a new buffer allocation
 	dir2 := path[seqIndex+1:]
 
-	fmt.Println("dir1 =>",string(dir1)) //prints: dir1 => AAAA fmt.Println("dir2 =>",string(dir2)) //prints: dir2 => BBBBBBBBB
-	dir1 = append(dir1,"suffix"...)
-	fmt.Println("dir1 =>",string(dir1)) //prints: dir1 => AAAAsuffix
-	fmt.Println("dir2 =>",string(dir2)) //prints: dir2 => BBBBBBBBB
+	fmt.Println("dir1 =>", string(dir1)) //prints: dir1 => AAAA fmt.Println("dir2 =>",string(dir2)) //prints: dir2 => BBBBBBBBB
+	dir1 = append(dir1, "suffix"...)
+	fmt.Println("dir1 =>", string(dir1)) //prints: dir1 => AAAAsuffix
+	fmt.Println("dir2 =>", string(dir2)) //prints: dir2 => BBBBBBBBB
 }
