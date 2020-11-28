@@ -38,12 +38,19 @@ func NewCrypto(encodingAESKey string, encryptMsg string) ICrypto {
 	return &crypto{
 		EncodingAESKey: encodingAESKey,
 		EncryptMsg:     encryptMsg,
+		err:            nil,
 	}
 }
 
 type crypto struct {
+	err            error
 	EncodingAESKey string `json:"encoding_aes_key"`
 	EncryptMsg     string `json:"encrypt_msg"`
+}
+
+func (impl *crypto) resoleError(ctx context.Context) error {
+	log.ErrorContext(ctx, "resoleError")
+	return impl.err
 }
 
 func (impl *crypto) ParseParamEncrypto(ctx context.Context, encodingAESKey string, encryptMsg string) (*ResquestBody, error) {
@@ -76,6 +83,7 @@ func (impl *crypto) ParseParamEncrypto(ctx context.Context, encodingAESKey strin
 	textRequestBody, err := impl.parseEncryptTextRequestBody(ctx, plainData)
 	if err != nil {
 		log.ErrorContext(ctx, "parseEncryptTextRequestBody-failed", "error", err.Error())
+		return nil, err
 	}
 	return textRequestBody, nil
 }
