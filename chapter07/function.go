@@ -29,7 +29,7 @@ func transform(slice, function interface{}, inPlace bool) interface{} {
 	// check the function signature
 	fn := reflect.ValueOf(function)
 	elemType := sliceInType.Type().Elem()
-	if !VerifyFuncSignature(fn, elemType, nil) {
+	if !verifyFuncSignature(fn, elemType, nil) {
 		panic("transform: function must be of type func(" + sliceInType.Type().Elem().String() + ") outputElemType")
 	}
 	sliceOutType := sliceInType
