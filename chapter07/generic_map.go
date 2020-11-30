@@ -1,4 +1,4 @@
-package chater04
+package chater07
 
 import "reflect"
 
@@ -18,6 +18,10 @@ import "reflect"
 
 func Transform(slice, fn interface{}) interface{} {
 	return transform(slice, fn, false)
+}
+
+func TransformInPlace(slice, fn interface{}) interface{} {
+	return transform(slice, fn, true)
 }
 
 func transform(slice, function interface{}, inPlace bool) interface{} {
@@ -43,7 +47,6 @@ func transform(slice, function interface{}, inPlace bool) interface{} {
 }
 
 // Verify Function Signature
-
 func verifyFuncSignature(fn reflect.Value, types ...reflect.Type) bool {
 	// check it is a function
 	if fn.Kind() != reflect.Func {
