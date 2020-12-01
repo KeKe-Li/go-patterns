@@ -23,17 +23,17 @@ func TestTransformnPlace(t *testing.T) {
 		return a * 3
 	})
 	if !reflect.DeepEqual(expect, list) {
-		t.Fatalf("Transform failed: expect %v got %v",expect, list)
+		t.Fatalf("Transform failed: expect %v got %v", expect, list)
 	}
 }
 
 func TestTransformInPlace(t *testing.T) {
-	list := []int{1,2,3,4,5,6,7,8,9}
-	expect := []int{3,6,9,12,15,18,21,24,27}
-	TransformInPlace(list, func(a int) int{
+	list := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	expect := []int{3, 6, 9, 12, 15, 18, 21, 24, 27}
+	TransformInPlace(list, func(a int) int {
 		return a * 3
 	})
-	if reflect.DeepEqual(expect,list){
-		t.Fatalf("Transform failed: expect %v got %v",expect,list)
+	if reflect.DeepEqual(expect, list) {
+		t.Fatalf("Transform failed: expect %v got %v", expect, list)
 	}
 }
