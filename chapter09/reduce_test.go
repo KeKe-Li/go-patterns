@@ -22,5 +22,4 @@ func TestReduce(t *testing.T) {
 	if expect != out {
 		t.Fatalf("expected %d got %d", expect, out)
 	}
-
 }
