@@ -11,7 +11,7 @@ func NewDecoratedVisitor(v Visitor, fn ...VisitorFunc) Visitor {
 	if len(fn) == 0 {
 		return v
 	}
-	return DecoratedVisitor{v, fn}
+	return DecoratedVisitor{visitor: v, decorators: fn}
 }
 
 // Visit implements Visitor
