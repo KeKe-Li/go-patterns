@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 )
+
 func TestStrategy(t *testing.T) {
 	operator := Operator{}
 
