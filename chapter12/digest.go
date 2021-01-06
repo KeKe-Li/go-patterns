@@ -5,12 +5,13 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
-	"github.com/KeKe-Li/log"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sort"
 	"sync"
+
+	"github.com/KeKe-Li/log"
 )
 
 func main() {
