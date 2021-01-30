@@ -20,6 +20,7 @@ type ICrypto interface {
 	ParseParamEncrypto(ctx context.Context, encodingAESKey string, encryptMsg string) (*ResquestBody, error)
 }
 
+
 // ResquestBody for struct
 type ResquestBody struct {
 	XMLName      xml.Name      `xml:"xml"`
