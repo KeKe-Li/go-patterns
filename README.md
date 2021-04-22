@@ -9,7 +9,7 @@ go design patterns, sometimes , maybe we want to write amazing code , we need to
 5. Map Reduce Filter 
 6. Go Generation
 7. Decoration
-8. Pipeline
+8. Pipeline 
 10. Builder Pattern (建造者模式)
 11. Factory Method (工厂方法模式)
 12. Object Pool (对象池模式)
